@@ -1,4 +1,11 @@
 Imageboard::Application.routes.draw do
+
+  resources :threads do
+    resources :posts
+  end
+ 
+  root 'threads#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

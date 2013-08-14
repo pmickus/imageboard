@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<% @thread.posts.each do |p| %>
+   <div><%= p.comment %></div>
+<% end %>
+<%= link_to 'Back', controller: "threads", action: "index" %>
