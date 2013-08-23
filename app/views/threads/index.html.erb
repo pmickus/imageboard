@@ -12,8 +12,10 @@
   <tbody>
     <% @threads.each do |thread| %>
       <tr>
+        <td><%= link_to image_tag(thread.image.url(:thumb)), thread.image.url %> </td>
+        <td><%= link_to thread.id, controller: "posts", action: "index", thread_id: thread.id %></td>
         <td><%= thread.title %></td>
-        <td><%= link_to 'Show', controller: "posts", action: "index", thread_id: thread.id %></td>
+        <td><%= thread.comment %></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Threads', new_thread_path %>
+<%= link_to 'New Thread', new_thread_path %>

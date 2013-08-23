@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h1>Listing posts</h1>
 
 <table>
@@ -10,11 +11,16 @@
   </thead>
 
   <tbody>
-    <tr><td> <%= @thread.title %> </td></tr>
+    <tr><td><%= link_to image_tag(@thread.image.url(:thumb)), @thread.image.url %></td><td><%= @thread.id %></td><td><%= @thread.title %> </td><td><%= @thread.comment %></td></tr>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.comment %></td>
-        <td><%= link_to 'Show', controller: 'posts', action: 'show', id: post.id %></td>      
+        <% if !(post.image_file_name.nil?) %> 
+           <td><%= link_to image_tag(post.image.url(:thumb)), post.image.url %></td>
+        <% else %>
+           <td></td>
+        <% end %>
+        <td><%= link_to post.id, controller: 'posts', action: 'show', id: post.id %></td>       
+        <td><%= post.comment %></td>        
       </tr>
     <% end %>
   </tbody>

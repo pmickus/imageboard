@@ -40,3 +40,8 @@ end
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson'
 gem 'bson_ext'
+
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 1.3.4'

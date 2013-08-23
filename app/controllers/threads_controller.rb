@@ -42,6 +42,6 @@ class ThreadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thread_params
-      params[:thread].permit(:title)
+      params[:thread].permit(:title, :comment, :image)
     end
 end
