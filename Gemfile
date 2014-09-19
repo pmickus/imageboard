@@ -49,3 +49,4 @@ gem 'aws-sdk', '~> 1.3.4'
 gem "jquery-rails"
 
 gem 'turbolinks'
+gem 'bunny'

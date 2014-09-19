@@ -25,6 +25,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        Publisher.publish("posts", @post.attributes)
+
         format.html { redirect_to thread_posts_url, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
